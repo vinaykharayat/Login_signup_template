@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authentication_navigation"
+    app:startDestination="@id/login_Screen">
+    <fragment
+        android:id="@+id/login_Screen"
+        android:name="com.helpinghandsorg.login_signup_template.Login_Screen"
+        android:label="fragment_login__screen"
+        tools:layout="@layout/fragment_login__screen" >
+        <action
+            android:id="@+id/action_login_Screen_to_registration_Screen"
+            app:destination="@id/registration_Screen" />
+        <action
+            android:id="@+id/action_login_Screen_to_password_Reset"
+            app:destination="@id/password_Reset" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration_Screen"
+        android:name="com.helpinghandsorg.login_signup_template.Registration_Screen"
+        android:label="fragment_registration__screen"
+        tools:layout="@layout/fragment_registration__screen" >
+        <action
+            android:id="@+id/action_registration_Screen_to_login_Screen"
+            app:destination="@id/login_Screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/password_Reset"
+        android:name="com.helpinghandsorg.login_signup_template.Password_Reset"
+        android:label="fragment_password__reset"
+        tools:layout="@layout/fragment_password__reset" />
+</navigation>
