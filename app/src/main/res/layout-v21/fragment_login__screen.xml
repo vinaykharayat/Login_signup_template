@@ -69,12 +69,14 @@
                 app:endIconTint="#880E4F"
                 app:hintTextColor="#880E4F"
                 app:startIconTint="#880E4F"
-                android:transitionName="username_trans">
+                android:transitionName="username_trans"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/quantico_bold" />
+                    android:fontFamily="@font/quantico_bold"
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,7 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/quantico_bold"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

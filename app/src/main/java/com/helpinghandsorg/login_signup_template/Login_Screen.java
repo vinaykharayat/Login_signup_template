@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.util.Pair;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.FragmentNavigator;
 import androidx.navigation.fragment.NavHostFragment;
@@ -26,6 +26,7 @@ public class Login_Screen extends Fragment {
 
     private TextView welcome_text, welcome_des;
     private TextInputLayout username, password;
+    private Button signup, login;
 
     public Login_Screen() {
         // Required empty public constructor
@@ -34,8 +35,8 @@ public class Login_Screen extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final Button signup = view.findViewById(R.id.signup_btn);
-        final Button login = view.findViewById(R.id.login_btn);
+        signup = view.findViewById(R.id.signup_btn);
+        login = view.findViewById(R.id.login_btn);
         username = view.findViewById(R.id.username);
         password = view.findViewById(R.id.password);
         welcome_text = view.findViewById(R.id.textView);
@@ -44,12 +45,12 @@ public class Login_Screen extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentNavigator.Extras extras = new FragmentNavigator.Extras.Builder()
-                        .addSharedElement(signup, "sign_up_btn_trans")
-                        .addSharedElement(login, "login_btn_trans")
-                        .addSharedElement(welcome_text, "welcome_text")
-                        .addSharedElement(welcome_des, "welcome_des")
-                        .addSharedElement(username, "username_trans")
-                        .addSharedElement(password, "password_trans").build();
+                        .addSharedElement(signup, ViewCompat.getTransitionName(signup))
+                        .addSharedElement(login, ViewCompat.getTransitionName(login))
+                        .addSharedElement(welcome_text, ViewCompat.getTransitionName(welcome_text))
+                        .addSharedElement(welcome_des, ViewCompat.getTransitionName(welcome_des))
+                        .addSharedElement(username, ViewCompat.getTransitionName(username))
+                        .addSharedElement(password, ViewCompat.getTransitionName(password)).build();
                 NavHostFragment.findNavController(Login_Screen.this).navigate(R.id.action_login_Screen_to_registration_Screen,
                         null, null, extras);
             }
@@ -60,7 +61,7 @@ public class Login_Screen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setSharedElementEnterTransition(TransitionInflater.from(getContext()).inflateTransition(android.R.transition.explode));
+            setSharedElementEnterTransition(TransitionInflater.from(getContext()).inflateTransition(android.R.transition.move));
         }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login__screen, container, false);

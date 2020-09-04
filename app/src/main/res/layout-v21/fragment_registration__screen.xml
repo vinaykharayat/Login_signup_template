@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/AppTheme.NoActionBar"
     tools:context=".Registration_Screen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,9 +31,9 @@
             android:layout_marginTop="32dp"
             android:fontFamily="@font/coiny"
             android:text="Welcome,"
-            android:transitionName="welcome_text"
             android:textColor="#880E4F"
             android:textSize="36sp"
+            android:transitionName="welcome_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -44,9 +45,9 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/quantico_bold"
             android:text="Sign up to begin"
-            android:transitionName="welcome_des"
             android:textColor="#880E4F"
             android:textSize="18sp"
+            android:transitionName="welcome_des"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -70,7 +71,8 @@
                 app:boxStrokeColor="#880E4F"
                 app:endIconTint="#880E4F"
                 app:hintTextColor="#880E4F"
-                app:startIconTint="#880E4F">
+                app:startIconTint="#880E4F"
+                android:transitionName="username_trans">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -88,10 +90,10 @@
                 app:boxStrokeColor="#880E4F"
                 app:endIconTint="#880E4F"
                 app:hintTextColor="#880E4F"
-                app:startIconTint="#880E4F"
-                android:transitionName="username_trans">
+                app:startIconTint="#880E4F">
 
                 <com.google.android.material.textfield.TextInputEditText
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/quantico_bold"
@@ -124,13 +126,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+
                 app:boxStrokeColor="#880E4F"
                 app:endIconCheckable="true"
                 app:endIconMode="password_toggle"
                 app:endIconTint="#880E4F"
                 app:hintTextColor="#880E4F"
-                app:startIconTint="#880E4F"
-                android:transitionName="password_trans">
+                app:startIconTint="#880E4F">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -145,6 +147,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:transitionName="password_trans"
                 android:hint="Confirm Password"
                 app:boxStrokeColor="#880E4F"
                 app:endIconCheckable="true"
@@ -162,14 +165,16 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/signup_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Register"
-                app:backgroundTint="#880E4F"
-                android:transitionName="login_btn_trans"/>
+                android:transitionName="login_btn_trans"
+                app:backgroundTint="#880E4F" />
 
             <Button
+                android:id="@+id/login_btn"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -177,8 +182,8 @@
                 android:fontFamily="@font/quantico_bold"
                 android:text="Already Registered? Login"
                 android:textColor="#880E4F"
-                app:backgroundTint="#00000000"
-                android:transitionName="sign_up_btn_trans"/>
+                android:transitionName="sign_up_btn_trans"
+                app:backgroundTint="#00000000" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
